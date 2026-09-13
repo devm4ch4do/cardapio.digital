@@ -1,4 +1,5 @@
 let pedido = [];
+const TAXA_ENTREGA = 5;
 
 
 // Função para adicionar produto
@@ -96,7 +97,23 @@ function validarEndereco() {
 
     const formulario = document.getElementById("endereco-entrega");
     const erro = document.getElementById("erro-pedido");
-    const camposObrigatorios = formulario.querySelectorAll("input[required]:not([type='radio'])");
+    const tipoPedido = document.querySelector("input[name='tipo-pedido']:checked");
+
+    if (!tipoPedido) {
+        erro.textContent = "Escolha entre retirada ou entrega.";
+        erro.classList.add("visivel");
+        return null;
+    }
+
+    const camposObrigatorios = [
+        ...formulario.querySelectorAll(".dados-cliente input[required]")
+    ];
+
+    if (tipoPedido.value === "Entrega") {
+        camposObrigatorios.push(
+            ...formulario.querySelectorAll("#campos-entrega input[required]")
+        );
+    }
     let enderecoValido = true;
 
     camposObrigatorios.forEach(function (campo) {
@@ -114,7 +131,9 @@ function validarEndereco() {
     });
 
     if (!enderecoValido) {
-        erro.textContent = "Preencha o endereço, os dados do cliente e informe um CPF válido.";
+        erro.textContent = tipoPedido.value === "Entrega"
+            ? "Preencha o endereço, os dados do cliente e informe um CPF válido."
+            : "Preencha os dados do cliente e informe um CPF válido.";
         erro.classList.add("visivel");
         return null;
     }
@@ -136,12 +155,13 @@ function validarEndereco() {
     const dados = new FormData(formulario);
 
     return {
-        rua: dados.get("rua").trim(),
-        numero: dados.get("numero").trim(),
-        bairro: dados.get("bairro").trim(),
-        cidade: dados.get("cidade").trim(),
-        cep: dados.get("cep").trim(),
-        complemento: dados.get("complemento").trim(),
+        tipoPedido: tipoPedido.value,
+        rua: (dados.get("rua") || "").trim(),
+        numero: (dados.get("numero") || "").trim(),
+        bairro: (dados.get("bairro") || "").trim(),
+        cidade: (dados.get("cidade") || "").trim(),
+        cep: (dados.get("cep") || "").trim(),
+        complemento: (dados.get("complemento") || "").trim(),
         nome: dados.get("nome").trim(),
         cpf: dados.get("cpf").trim(),
         pagamento: pagamento.value,
@@ -182,6 +202,21 @@ function validarCPF(cpf) {
     return segundoDigito === Number(numeros[10]);
 }
 
+function configurarTipoPedido() {
+
+    const opcoesTipoPedido = document.querySelectorAll("input[name='tipo-pedido']");
+    const camposEntrega = document.getElementById("campos-entrega");
+    const taxaEntrega = document.getElementById("taxa-entrega");
+
+    opcoesTipoPedido.forEach(function (opcao) {
+        opcao.addEventListener("change", function () {
+            const entregaSelecionada = opcao.value === "Entrega" && opcao.checked;
+            camposEntrega.classList.toggle("oculto", !entregaSelecionada);
+            taxaEntrega.classList.toggle("visivel", entregaSelecionada);
+        });
+    });
+}
+
 function configurarPagamento() {
 
     const opcoesPagamento = document.querySelectorAll("input[name='pagamento']");
@@ -203,6 +238,7 @@ function configurarPagamento() {
 }
 
 configurarPagamento();
+configurarTipoPedido();
 
 
 // Envia pedido para WhatsApp
@@ -240,20 +276,33 @@ function enviarWhatsApp() {
 
     }, 0);
 
+    if (endereco.tipoPedido === "Entrega") {
+        total += TAXA_ENTREGA;
+    }
+
 
     mensagem +=
         `%0ATotal: R$ ${total.toFixed(2)}%0A%0A` +
-        `Endereço de entrega:%0A` +
-        `${endereco.rua}, ${endereco.numero}%0A` +
-        `${endereco.bairro} - ${endereco.cidade}%0A` +
-        `CEP: ${endereco.cep}%0A%0A` +
+        `${endereco.tipoPedido}:`;
+
+    if (endereco.tipoPedido === "Entrega") {
+        mensagem +=
+            `%0A${endereco.rua}, ${endereco.numero}%0A` +
+            `${endereco.bairro} - ${endereco.cidade}%0A` +
+            `CEP: ${endereco.cep}`;
+
+        if (endereco.complemento) {
+            mensagem += `%0AComplemento: ${endereco.complemento}`;
+        }
+
+        mensagem += `%0ATaxa de entrega: R$ ${TAXA_ENTREGA.toFixed(2)}`;
+    }
+
+    mensagem +=
+        `%0A%0A` +
         `Cliente: ${endereco.nome}%0A` +
         `CPF: ${endereco.cpf}%0A` +
         `Pagamento: ${endereco.pagamento}`;
-
-    if (endereco.complemento) {
-        mensagem += `%0AComplemento: ${endereco.complemento}`;
-    }
 
     if (endereco.tipoMaquina) {
         mensagem += `%0ATipo: ${endereco.tipoMaquina}`;

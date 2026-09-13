@@ -288,41 +288,57 @@
             </h3>
 
             
-            <h2>🏠 Endereço de entrega</h2>
+            <fieldset class="tipo-pedido campo-endereco campo-endereco--largo">
+                <legend>Como deseja receber?</legend>
+                <label class="opcao-pagamento">
+                    <input type="radio" name="tipo-pedido" value="Retirada" required>
+                    Retirada
+                </label>
+                <label class="opcao-pagamento">
+                    <input type="radio" name="tipo-pedido" value="Entrega" required>
+                    Entrega
+                </label>
+            </fieldset>
 
-           
 
             <form id="endereco-entrega" class="endereco-grid" novalidate>
-                <label class="campo-endereco campo-endereco--largo">
-                    Rua
-                    <input type="text" name="rua" autocomplete="street-address" required>
-                </label>
+                <div id="campos-entrega" class="campos-entrega oculto">
+                    <label class="campo-endereco campo-endereco--largo">
+                        Rua
+                        <input type="text" name="rua" autocomplete="street-address" required>
+                    </label>
 
-                <label class="campo-endereco">
-                    Número
-                    <input type="text" name="numero" inputmode="numeric" required>
-                </label>
+                    <label class="campo-endereco">
+                        Número
+                        <input type="text" name="numero" inputmode="numeric" required>
+                    </label>
 
-                <label class="campo-endereco">
-                    Bairro
-                    <input type="text" name="bairro" autocomplete="address-level3" required>
-                </label>
+                    <label class="campo-endereco">
+                        Bairro
+                        <input type="text" name="bairro" autocomplete="address-level3" required>
+                    </label>
 
-                <label class="campo-endereco">
-                    Cidade
-                    <input type="text" name="cidade" autocomplete="address-level2" required>
-                </label>
+                    <label class="campo-endereco">
+                        Cidade
+                        <input type="text" name="cidade" autocomplete="address-level2" required>
+                    </label>
 
-                <label class="campo-endereco">
-                    CEP
-                    <input type="text" name="cep" inputmode="numeric" autocomplete="postal-code"
-                        placeholder="00000-000" maxlength="9" required>
-                </label>
+                    <label class="campo-endereco">
+                        CEP
+                        <input type="text" name="cep" inputmode="numeric" autocomplete="postal-code"
+                            placeholder="00000-000" maxlength="9" required>
+                    </label>
 
-                <label class="campo-endereco campo-endereco--largo">
-                    Complemento <span>(opcional)</span>
-                    <input type="text" name="complemento" autocomplete="address-line2">
-                </label>
+                    <label class="campo-endereco campo-endereco--largo">
+                        Complemento <span>(opcional)</span>
+                        <input type="text" name="complemento" autocomplete="address-line2">
+                    </label>
+                </div>
+
+                <div id="taxa-entrega" class="taxa-entrega campo-endereco campo-endereco--largo">
+                    <span>Taxa de entrega</span>
+                    <strong>R$ 5,00</strong>
+                </div>
 
                 <p id="erro-endereco" class="erro-endereco" role="alert"></p>
 
