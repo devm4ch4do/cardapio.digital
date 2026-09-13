@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Machado Burger</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-brand">
+            <img class="logo" src="img_proj_cardápio/logo lancheria.png" alt="Logo do Machado Burger">
+            <div class="brand-copy">
+                <h1> Machado Burger</h1>
+                <p>Seu hambúrguer favorito está aqui!</p>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- Categoria -->
+        <section class="categoria">
+
+            <h2>🍔 Hambúrgueres</h2>
+
+            <!-- Produto -->
+            <div class="produto">
+
+                <div>
+                    <h3>X-Bacon</h3>
+
+                    <p>
+                        Pão, hambúrguer, queijo, bacon e molho especial.
+                    </p>
+
+                    <img src="img_proj_cardápio\xbacon.jpg" alt="X-Bacon">
+
+                    <strong>R$ 18,00</strong>
+                </div>
+
+                <button onclick="adicionarProduto('X-Bacon', 18)">
+                    +
+                </button>
+
+            </div>
+
+
+            <!-- Produto -->
+            <div class="produto">
+
+                <div>
+                    <h3>X-Salada</h3>
+
+                    <p>
+                        Pão, hambúrguer, queijo, alface, tomate e molho.
+                    </p>
+
+                    <img src="img_proj_cardápio\xsalada.jpg" alt="X-Salada">
+
+                    <strong>R$ 16,00</strong>
+                </div>
+
+                <button onclick="adicionarProduto('X-Salada', 16)">
+                    +
+                </button>
+
+            </div>
+
+
+            <!-- Produto -->
+            <div class="produto">
+
+                <div>
+                    <h3>X-Tudo</h3>
+
+                    <p>
+                        Hambúrguer, queijo, bacon, ovo, presunto e salada.
+                    </p>
+
+                    <img src="img_proj_cardápio\xtudo.jpg" alt="X-Tudo">
+
+                    <strong>R$ 25,00</strong>
+                </div>
+
+                <button onclick="adicionarProduto('X-Tudo', 25)">
+                    +
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Categoria -->
+        <section class="categoria">
+
+            <h2>🍟 Porções</h2>
+
+            <div class="produto">
+
+                <div>
+                    <h3>Batata Frita</h3>
+
+                    <p>
+                        Porção de batata frita crocante.
+                    </p>
+
+                    <img src="img_proj_cardápio/batata_simples.jpg" alt="Batata Frita">
+
+                    <strong>R$ 15,00</strong>
+                </div>
+
+                <button onclick="adicionarProduto('Batata Frita', 15)">
+                    +
+                </button>
+
+            </div>
+
+            
+            <div class="produto">
+
+                <div>
+                    <h3>Batata Frita c/ cheddar</h3>
+
+                    <p>
+                        Porção de batata frita crocante com queijo cheddar e bacon.
+                    </p>
+
+                    <img src="img_proj_cardápio/batata_cheddar.png" alt="Batata Frita c/ Cheddar">
+
+                    <strong>R$ 20,00</strong>
+                </div>
+
+                <button onclick="adicionarProduto('Batata Frita c/ Cheddar', 20)">
+                    +
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- Categoria -->
+        <section class="categoria">
+
+            <h2>🥤 Bebidas</h2>
+
+            <div class="produto">
+
+                <div>
+                    <h3>Coca-Cola 2L</h3>
+
+                    <p>
+                        Coca-Cola 2 litros.
+                    </p>
+                    
+                    <img src="img_proj_cardápio/coca_cola_2l.jpg" alt="Coca-Cola 2 litros">
+
+                    <strong>R$ 12,00</strong>
+                </div>
+
+                <button onclick="adicionarProduto('Coca-Cola 2l', 12)">
+                    +
+                </button>
+
+            </div>
+
+
+            <div class="produto">
+
+
+                 <div>
+                    <h3>Coca-Cola 2l zero</h3>
+
+                    <p>
+                        Coca-Cola 2l zero.
+                    </p>
+                    
+                    <img src="img_proj_cardápio/coca_cola_2l_zero.jpg" alt="Coca-Cola 2 litros zero">
+                    
+                    <strong>R$ 12,00</strong>
+                </div>
+
+                <button onclick="adicionarProduto('Coca-Cola 2l zero', 12)">
+                    +
+                </button>
+
+            </div>
+
+            <div class="produto">
+
+                <div>
+                    <h3>Coca-Cola 350ml</h3>
+
+                    <p>
+                        Coca-Cola 350ml.
+                    </p>
+                    
+                    <img src="img_proj_cardápio/coca_cola_350ml.jpg" alt="Coca-Cola 350 ml">
+                    
+                    <strong>R$ 5,00</strong>
+                </div>
+
+                <button onclick="adicionarProduto('Coca-Cola 350ml', 5)">
+                    +
+                </button>
+            </div>
+
+            <div class="produto">
+
+                <div>
+                    <h3>Guaraná Antartica 2L</h3>
+
+                    <p>
+                        Guaraná Antartica 2L.
+                    </p>
+                    
+                    <img src="img_proj_cardápio/guarana_antartica_2l.jpg" alt="Guaraná Antarctica 2 litros">
+                    
+                    <strong>R$ 12,00</strong>
+                </div>
+
+                <button onclick="adicionarProduto('Guaraná Antartica 2l', 12)">
+                    +
+                </button>
+            </div>
+
+            <div class="produto">
+
+                <div>
+                    <h3>Fruki guaraná 2L</h3>
+
+                    <p>
+                        Fruki guaraná 2L.
+                    </p>
+                    
+                    <img src="img_proj_cardápio/fruki_guaraná_2l.png" alt="Fruki Guaraná 2 litros">
+                    
+                    <strong>R$ 10,00</strong>
+                </div>
+
+                <button onclick="adicionarProduto('Fruki guaraná 2L', 10)">
+                    +
+                </button>
+
+            </div>
+
+            <div class="produto">
+
+                <div>
+                    <h3>Fruki guaraná 350 ml</h3>
+
+                    <p>
+                        Fruki guaraná 350 ml.
+                    </p>
+                    
+                    <img src="img_proj_cardápio/fruki_350ml.png" alt="Fruki Guaraná 350 ml">
+                    
+                    <strong>R$ 4,00</strong>
+                </div>
+
+                <button onclick="adicionarProduto('Fruki guaraná 350 ml', 4)">
+                    +
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Carrinho -->
+        <section class="carrinho">
+
+            <h2>🛒 Seu pedido</h2>
+
+            <div id="lista-pedido">
+                <p>Nenhum produto adicionado.</p>
+            </div>
+
+            <h3>
+                Total: R$ <span id="total">0.00</span>
+            </h3>
+
+            
+            <h2>🏠 Endereço de entrega</h2>
+
+           
+
+            <form id="endereco-entrega" class="endereco-grid" novalidate>
+                <label class="campo-endereco campo-endereco--largo">
+                    Rua
+                    <input type="text" name="rua" autocomplete="street-address" required>
+                </label>
+
+                <label class="campo-endereco">
+                    Número
+                    <input type="text" name="numero" inputmode="numeric" required>
+                </label>
+
+                <label class="campo-endereco">
+                    Bairro
+                    <input type="text" name="bairro" autocomplete="address-level3" required>
+                </label>
+
+                <label class="campo-endereco">
+                    Cidade
+                    <input type="text" name="cidade" autocomplete="address-level2" required>
+                </label>
+
+                <label class="campo-endereco">
+                    CEP
+                    <input type="text" name="cep" inputmode="numeric" autocomplete="postal-code"
+                        placeholder="00000-000" maxlength="9" required>
+                </label>
+
+                <label class="campo-endereco campo-endereco--largo">
+                    Complemento <span>(opcional)</span>
+                    <input type="text" name="complemento" autocomplete="address-line2">
+                </label>
+
+                <p id="erro-endereco" class="erro-endereco" role="alert"></p>
+
+                <fieldset class="pagamento campo-endereco campo-endereco--largo">
+                    <legend>Forma de pagamento</legend>
+                    <label class="opcao-pagamento">
+                        <input type="radio" name="pagamento" value="Dinheiro" required>
+                        Dinheiro
+                    </label>
+                    <label class="opcao-pagamento">
+                        <input type="radio" name="pagamento" value="Na máquina" required>
+                        Na máquina
+                    </label>
+                </fieldset>
+
+                <div id="opcoes-maquina" class="opcoes-maquina campo-endereco campo-endereco--largo">
+                    <span>Escolha o tipo de pagamento</span>
+                    <div class="opcoes-maquina__lista">
+                        <label class="opcao-pagamento">
+                            <input type="radio" name="tipo-maquina" value="Débito">
+                            Débito
+                        </label>
+                        <label class="opcao-pagamento">
+                            <input type="radio" name="tipo-maquina" value="Crédito">
+                            Crédito
+                        </label>
+                        <label class="opcao-pagamento">
+                            <input type="radio" name="tipo-maquina" value="Pix">
+                            Pix
+                        </label>
+                    </div>
+                </div>
+
+                <div class="dados-cliente campo-endereco campo-endereco--largo">
+                    <span class="titulo-secao">Dados do cliente</span>
+                    <div class="dados-cliente__grid">
+                        <label class="campo-endereco">
+                            Nome completo
+                            <input type="text" name="nome" autocomplete="name" required>
+                        </label>
+                        <label class="campo-endereco">
+                            CPF
+                            <input type="text" name="cpf" inputmode="numeric" autocomplete="off"
+                                placeholder="000.000.000-00" maxlength="14" required>
+                        </label>
+                    </div>
+                </div>
+
+                <p id="erro-pedido" class="erro-endereco" role="alert"></p>
+            </form>
+
+            <button
+                class="whatsapp"
+                onclick="enviarWhatsApp()"
+            >
+                📱 Pedir pelo WhatsApp
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Machado Burger © 2026
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

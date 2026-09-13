@@ -1,0 +1,371 @@
+/* Configurações gerais */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background-color: #f5f5f5;
+
+    color: #222;
+}
+
+
+/* Cabeçalho */
+
+header {
+    background-color: #222;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+.brand-copy {
+    text-align: left;
+}
+
+.brand-copy p {
+    margin: 8px 0 0;
+}
+
+header .logo {
+    display: block;
+    width: 116px;
+    height: 116px;
+    margin: 0;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.28);
+}
+
+
+/* Conteúdo */
+
+main {
+    max-width: 700px;
+
+    margin: auto;
+
+    padding: 20px;
+}
+
+
+/* Categorias */
+
+.categoria {
+    margin-bottom: 30px;
+}
+
+.categoria h2 {
+    border-bottom: 2px solid #ddd;
+
+    padding-bottom: 10px;
+}
+
+
+/* Produto */
+
+.produto {
+    background-color: white;
+
+    padding: 15px;
+
+    margin-bottom: 12px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.produto h3 {
+    margin-top: 0;
+}
+
+.produto p {
+    color: #666;
+}
+
+.produto img {
+    width: 52px;
+    height: 52px;
+    margin: 4px 8px 0 0;
+    border-radius: 8px;
+    object-fit: cover;
+    vertical-align: middle;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.produto img[src=""] {
+    display: none;
+}
+
+.produto strong {
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+
+/* Botão adicionar */
+
+.produto button {
+    border: none;
+
+    background-color: #25d366;
+
+    color: white;
+
+    font-size: 25px;
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
+
+/* Carrinho */
+
+.carrinho {
+    background-color: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    margin-top: 30px;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.endereco-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(90px, 1fr);
+    gap: 12px;
+    margin: 18px 0 20px;
+}
+
+.campo-endereco {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: #444;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.campo-endereco--largo {
+    grid-column: 1 / -1;
+}
+
+.campo-endereco span {
+    color: #777;
+    font-weight: normal;
+}
+
+.campo-endereco input:not([type="radio"]) {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #d5d5d5;
+    border-radius: 7px;
+    color: #222;
+    font: inherit;
+    font-weight: normal;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo-endereco input:not([type="radio"]):focus {
+    border-color: #25d366;
+    box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.15);
+}
+
+.campo-endereco input:not([type="radio"]).invalido {
+    border-color: #d93025;
+    background-color: #fff7f6;
+}
+
+.erro-endereco {
+    display: none;
+    grid-column: 1 / -1;
+    margin: 0;
+    color: #d93025;
+    font-size: 14px;
+}
+
+.erro-endereco.visivel {
+    display: block;
+}
+
+.pagamento {
+    min-width: 0;
+    padding: 0;
+    border: 0;
+}
+
+.pagamento legend,
+.titulo-secao {
+    padding: 0;
+    color: #444;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.opcao-pagamento {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #444;
+    font-size: 14px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.opcao-pagamento input {
+    accent-color: #25d366;
+}
+
+.pagamento .opcao-pagamento {
+    margin: 10px 18px 0 0;
+}
+
+.opcoes-maquina {
+    display: none;
+    padding: 12px;
+    border: 1px solid #d5d5d5;
+    border-radius: 7px;
+    background-color: #f8f8f8;
+}
+
+.opcoes-maquina.visivel {
+    display: flex;
+}
+
+.opcoes-maquina__lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 8px;
+}
+
+.dados-cliente {
+    gap: 10px;
+}
+
+.dados-cliente__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+
+/* Botão WhatsApp */
+
+.whatsapp {
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #25d366;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* Rodapé */
+
+footer {
+    text-align: center;
+
+    padding: 30px;
+
+    color: #777;
+}
+
+
+/* Celular */
+
+@media (max-width: 500px) {
+
+    main {
+        padding: 12px;
+    }
+
+    .produto {
+        padding: 12px;
+    }
+
+    .produto p {
+        font-size: 14px;
+    }
+
+    .produto img {
+        width: 44px;
+        height: 44px;
+    }
+
+    header .logo {
+        width: 84px;
+        height: 84px;
+    }
+
+    .header-brand {
+        gap: 12px;
+    }
+
+    .brand-copy h1 {
+        font-size: 24px;
+    }
+
+    .endereco-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .campo-endereco--largo {
+        grid-column: auto;
+    }
+
+    .dados-cliente__grid {
+        grid-template-columns: 1fr;
+    }
+
+}
