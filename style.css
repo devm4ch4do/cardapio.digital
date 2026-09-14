@@ -132,24 +132,53 @@ main {
 }
 
 
-/* Botão adicionar */
+/* Controle de quantidade */
 
-.produto button {
+.controle-quantidade {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.controle-quantidade span {
+    min-width: 24px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.botao-quantidade {
     border: none;
-
     background-color: #25d366;
-
     color: white;
-
-    font-size: 25px;
-
-    width: 45px;
-
-    height: 45px;
-
+    font-size: 16px;
+    font-weight: bold;
+    width: 42px;
+    height: 38px;
     border-radius: 50%;
-
     cursor: pointer;
+}
+
+.botao-quantidade--menos {
+    background-color: #e8e8e8;
+    color: #222;
+}
+
+.adicionar-pedido {
+    width: 100%;
+    padding: 13px 15px;
+    margin: 4px 0 30px;
+    border: 2px solid #25d366;
+    border-radius: 8px;
+    background-color: white;
+    color: #168a43;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.adicionar-pedido:hover {
+    background-color: #f0fff5;
 }
 
 

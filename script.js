@@ -6,10 +6,28 @@ const TAXA_ENTREGA = 5;
 
 function adicionarProduto(nome, preco) {
 
-    pedido.push({
-        nome: nome,
-        preco: preco
+    alterarQuantidade(nome, preco, 1);
+}
+
+function alterarQuantidade(nome, preco, variacao) {
+
+    const produto = pedido.find(function (item) {
+        return item.nome === nome;
     });
+
+    if (produto) {
+        produto.quantidade += variacao;
+    } else if (variacao > 0) {
+        pedido.push({
+            nome: nome,
+            preco: preco,
+            quantidade: variacao
+        });
+    }
+
+    if (produto && produto.quantidade <= 0) {
+        pedido.splice(pedido.indexOf(produto), 1);
+    }
 
     atualizarPedido();
 }
@@ -27,6 +45,10 @@ function atualizarPedido() {
     // Limpa a lista atual
 
     listaPedido.innerHTML = "";
+
+    document.querySelectorAll(".controle-quantidade span").forEach(function (contador) {
+        contador.textContent = "0";
+    });
 
 
     // Se não tiver produtos
@@ -53,8 +75,14 @@ function atualizarPedido() {
 
         const item = document.createElement("p");
 
+        const contador = document.querySelector(
+            `.controle-quantidade[data-produto="${produto.nome}"] span`
+        );
+
+        contador.textContent = produto.quantidade;
+
         item.textContent =
-            `${produto.nome} - R$ ${produto.preco.toFixed(2)}`;
+            `${produto.quantidade}x ${produto.nome} - R$ ${(produto.preco * produto.quantidade).toFixed(2)}`;
 
 
         // Cria botão de excluir
@@ -83,7 +111,7 @@ function atualizarPedido() {
 
         // Soma o preço
 
-        total += produto.preco;
+        total += produto.preco * produto.quantidade;
     });
 
 
@@ -237,8 +265,23 @@ function configurarPagamento() {
     });
 }
 
+function configurarMascaraCPF() {
+
+    const campoCPF = document.querySelector("input[name='cpf']");
+
+    campoCPF.addEventListener("input", function () {
+        const numeros = campoCPF.value.replace(/\D/g, "").slice(0, 11);
+
+        campoCPF.value = numeros
+            .replace(/(\d{3})(\d)/, "$1.$2")
+            .replace(/(\d{3})(\d)/, "$1.$2")
+            .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+    });
+}
+
 configurarPagamento();
 configurarTipoPedido();
+configurarMascaraCPF();
 
 
 // Envia pedido para WhatsApp
@@ -266,13 +309,13 @@ function enviarWhatsApp() {
     pedido.forEach(function (produto) {
 
         mensagem +=
-            `1x ${produto.nome} - R$ ${produto.preco.toFixed(2)}%0A`;
+            `${produto.quantidade}x ${produto.nome} - R$ ${(produto.preco * produto.quantidade).toFixed(2)}%0A`;
     });
 
 
     let total = pedido.reduce(function (soma, produto) {
 
-        return soma + produto.preco;
+        return soma + produto.preco * produto.quantidade;
 
     }, 0);
 

@@ -45,9 +45,17 @@
                     <strong>R$ 18,00</strong>
                 </div>
 
-                <button onclick="adicionarProduto('X-Bacon', 18)">
-                    +
-                </button>
+                <div class="controle-quantidade" data-produto="X-Bacon" aria-label="Quantidade de X-Bacon">
+                    <button class="botao-quantidade botao-quantidade--menos" type="button"
+                        onclick="alterarQuantidade('X-Bacon', 18, -1)" aria-label="Diminuir X-Bacon">
+                        -
+                    </button>
+                    <span id="quantidade-X-Bacon">0</span>
+                    <button class="botao-quantidade" type="button" onclick="adicionarProduto('X-Bacon', 18)"
+                        aria-label="Adicionar X-Bacon">
+                        +
+                    </button>
+                </div>
 
             </div>
 
@@ -67,9 +75,17 @@
                     <strong>R$ 16,00</strong>
                 </div>
 
-                <button onclick="adicionarProduto('X-Salada', 16)">
-                    +
-                </button>
+                <div class="controle-quantidade" data-produto="X-Salada" aria-label="Quantidade de X-Salada">
+                    <button class="botao-quantidade botao-quantidade--menos" type="button"
+                        onclick="alterarQuantidade('X-Salada', 16, -1)" aria-label="Diminuir X-Salada">
+                        -
+                    </button>
+                    <span id="quantidade-X-Salada">0</span>
+                    <button class="botao-quantidade" type="button" onclick="adicionarProduto('X-Salada', 16)"
+                        aria-label="Adicionar X-Salada">
+                        +
+                    </button>
+                </div>
 
             </div>
 
@@ -89,9 +105,17 @@
                     <strong>R$ 25,00</strong>
                 </div>
 
-                <button onclick="adicionarProduto('X-Tudo', 25)">
-                    +
-                </button>
+                <div class="controle-quantidade" data-produto="X-Tudo" aria-label="Quantidade de X-Tudo">
+                    <button class="botao-quantidade botao-quantidade--menos" type="button"
+                        onclick="alterarQuantidade('X-Tudo', 25, -1)" aria-label="Diminuir X-Tudo">
+                        -
+                    </button>
+                    <span id="quantidade-X-Tudo">0</span>
+                    <button class="botao-quantidade" type="button" onclick="adicionarProduto('X-Tudo', 25)"
+                        aria-label="Adicionar X-Tudo">
+                        +
+                    </button>
+                </div>
 
             </div>
 
@@ -117,9 +141,17 @@
                     <strong>R$ 15,00</strong>
                 </div>
 
-                <button onclick="adicionarProduto('Batata Frita', 15)">
-                    +
-                </button>
+                <div class="controle-quantidade" data-produto="Batata Frita" aria-label="Quantidade de Batata Frita">
+                    <button class="botao-quantidade botao-quantidade--menos" type="button"
+                        onclick="alterarQuantidade('Batata Frita', 15, -1)" aria-label="Diminuir Batata Frita">
+                        -
+                    </button>
+                    <span id="quantidade-Batata-Frita">0</span>
+                    <button class="botao-quantidade" type="button" onclick="adicionarProduto('Batata Frita', 15)"
+                        aria-label="Adicionar Batata Frita">
+                        +
+                    </button>
+                </div>
 
             </div>
 
@@ -138,9 +170,19 @@
                     <strong>R$ 20,00</strong>
                 </div>
 
-                <button onclick="adicionarProduto('Batata Frita c/ Cheddar', 20)">
-                    +
-                </button>
+                <div class="controle-quantidade" data-produto="Batata Frita c/ Cheddar" aria-label="Quantidade de Batata Frita c/ Cheddar">
+                    <button class="botao-quantidade botao-quantidade--menos" type="button"
+                        onclick="alterarQuantidade('Batata Frita c/ Cheddar', 20, -1)"
+                        aria-label="Diminuir Batata Frita c/ Cheddar">
+                        -
+                    </button>
+                    <span id="quantidade-Batata-Frita-c-Cheddar">0</span>
+                    <button class="botao-quantidade" type="button"
+                        onclick="adicionarProduto('Batata Frita c/ Cheddar', 20)"
+                        aria-label="Adicionar Batata Frita c/ Cheddar">
+                        +
+                    </button>
+                </div>
 
             </div>
         </section>
@@ -165,9 +207,17 @@
                     <strong>R$ 12,00</strong>
                 </div>
 
-                <button onclick="adicionarProduto('Coca-Cola 2l', 12)">
-                    +
-                </button>
+                <div class="controle-quantidade" data-produto="Coca-Cola 2l" aria-label="Quantidade de Coca-Cola 2 litros">
+                    <button class="botao-quantidade botao-quantidade--menos" type="button"
+                        onclick="alterarQuantidade('Coca-Cola 2l', 12, -1)" aria-label="Diminuir Coca-Cola 2 litros">
+                        -
+                    </button>
+                    <span>0</span>
+                    <button class="botao-quantidade" type="button" onclick="adicionarProduto('Coca-Cola 2l', 12)"
+                        aria-label="Adicionar Coca-Cola 2 litros">
+                        +
+                    </button>
+                </div>
 
             </div>
 
@@ -187,9 +237,17 @@
                     <strong>R$ 12,00</strong>
                 </div>
 
-                <button onclick="adicionarProduto('Coca-Cola 2l zero', 12)">
-                    +
-                </button>
+                <div class="controle-quantidade" data-produto="Coca-Cola 2l zero" aria-label="Quantidade de Coca-Cola 2 litros zero">
+                    <button class="botao-quantidade botao-quantidade--menos" type="button"
+                        onclick="alterarQuantidade('Coca-Cola 2l zero', 12, -1)" aria-label="Diminuir Coca-Cola 2 litros zero">
+                        -
+                    </button>
+                    <span>0</span>
+                    <button class="botao-quantidade" type="button" onclick="adicionarProduto('Coca-Cola 2l zero', 12)"
+                        aria-label="Adicionar Coca-Cola 2 litros zero">
+                        +
+                    </button>
+                </div>
 
             </div>
 
@@ -207,9 +265,17 @@
                     <strong>R$ 5,00</strong>
                 </div>
 
-                <button onclick="adicionarProduto('Coca-Cola 350ml', 5)">
-                    +
-                </button>
+                <div class="controle-quantidade" data-produto="Coca-Cola 350ml" aria-label="Quantidade de Coca-Cola 350ml">
+                    <button class="botao-quantidade botao-quantidade--menos" type="button"
+                        onclick="alterarQuantidade('Coca-Cola 350ml', 5, -1)" aria-label="Diminuir Coca-Cola 350ml">
+                        -
+                    </button>
+                    <span>0</span>
+                    <button class="botao-quantidade" type="button" onclick="adicionarProduto('Coca-Cola 350ml', 5)"
+                        aria-label="Adicionar Coca-Cola 350ml">
+                        +
+                    </button>
+                </div>
             </div>
 
             <div class="produto">
@@ -226,9 +292,17 @@
                     <strong>R$ 12,00</strong>
                 </div>
 
-                <button onclick="adicionarProduto('Guaraná Antartica 2l', 12)">
-                    +
-                </button>
+                <div class="controle-quantidade" data-produto="Guaraná Antartica 2l" aria-label="Quantidade de Guaraná Antarctica 2 litros">
+                    <button class="botao-quantidade botao-quantidade--menos" type="button"
+                        onclick="alterarQuantidade('Guaraná Antartica 2l', 12, -1)" aria-label="Diminuir Guaraná Antarctica 2 litros">
+                        -
+                    </button>
+                    <span>0</span>
+                    <button class="botao-quantidade" type="button" onclick="adicionarProduto('Guaraná Antartica 2l', 12)"
+                        aria-label="Adicionar Guaraná Antarctica 2 litros">
+                        +
+                    </button>
+                </div>
             </div>
 
             <div class="produto">
@@ -245,9 +319,17 @@
                     <strong>R$ 10,00</strong>
                 </div>
 
-                <button onclick="adicionarProduto('Fruki guaraná 2L', 10)">
-                    +
-                </button>
+                <div class="controle-quantidade" data-produto="Fruki guaraná 2L" aria-label="Quantidade de Fruki guaraná 2 litros">
+                    <button class="botao-quantidade botao-quantidade--menos" type="button"
+                        onclick="alterarQuantidade('Fruki guaraná 2L', 10, -1)" aria-label="Diminuir Fruki guaraná 2 litros">
+                        -
+                    </button>
+                    <span>0</span>
+                    <button class="botao-quantidade" type="button" onclick="adicionarProduto('Fruki guaraná 2L', 10)"
+                        aria-label="Adicionar Fruki guaraná 2 litros">
+                        +
+                    </button>
+                </div>
 
             </div>
 
@@ -265,13 +347,26 @@
                     <strong>R$ 4,00</strong>
                 </div>
 
-                <button onclick="adicionarProduto('Fruki guaraná 350 ml', 4)">
-                    +
-                </button>
+                <div class="controle-quantidade" data-produto="Fruki guaraná 350 ml" aria-label="Quantidade de Fruki guaraná 350 ml">
+                    <button class="botao-quantidade botao-quantidade--menos" type="button"
+                        onclick="alterarQuantidade('Fruki guaraná 350 ml', 4, -1)" aria-label="Diminuir Fruki guaraná 350 ml">
+                        -
+                    </button>
+                    <span>0</span>
+                    <button class="botao-quantidade" type="button" onclick="adicionarProduto('Fruki guaraná 350 ml', 4)"
+                        aria-label="Adicionar Fruki guaraná 350 ml">
+                        +
+                    </button>
+                </div>
 
             </div>
 
         </section>
+
+
+        <button class="adicionar-pedido" type="button" onclick="atualizarPedido()">
+            Adicionar itens ao pedido
+        </button>
 
 
         <!-- Carrinho -->
